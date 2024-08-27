@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4 centralizar topo">
+            <div class="card">
+                <div class="card-body">
+                    <h3>Login</h3>
+                    <mdb-form-control>
+                        <input mdbLabel type="email" id="usuario" class="form-control" placeholder="Digite seu email" />
+                        <label mdbInput class="form-label" for="typeEmail">Usuário</label>
+                    </mdb-form-control>
+                    <br>
+                    <mdb-form-control>
+                        <input mdbLabel type="password" id="senha" class="form-control" placeholder="Digite sua senha" />
+                        <label mdbInput class="form-label" for="password">Senha</label>
+                    </mdb-form-control>
+                    <br>
+                    <button type="button" class="btn btn-primary btn-rounded" (click)="logar()">Acessar</button>
+                    <button type="button" class="btn btn-primary btn-rounded" (click)="navigateToRegister()">Cadastre-se</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

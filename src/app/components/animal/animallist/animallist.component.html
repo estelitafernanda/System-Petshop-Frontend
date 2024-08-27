@@ -1,0 +1,74 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+
+          <h3>Animais Cadastrados</h3>
+          <div class="input-group mb-3">
+            <input 
+              type="number" 
+              class="form-control" 
+              placeholder="Buscar por ID" 
+              [(ngModel)]="searchId" 
+              name="searchId"
+              aria-label="Buscar por ID" 
+              aria-describedby="search-button">
+            <button 
+              class="btn btn-outline-secondary" 
+              type="button" 
+              id="search-button" 
+              (click)="search()">Buscar</button>
+          </div>
+          <div class="direita">
+           <button type="button" class="btn btn-primary btn-rounded" mdbRipple (click)="new()">
+              Novo
+            </button>
+          </div>
+          <br>
+          <table border="1" class="table table-striped">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Tutor</th>
+                <th>Espécie</th>
+                <th>Raça</th>
+                <th>Idade</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let animal of lista; trackBy: trackByAnimalId">
+                <td>{{ animal.id }}</td>
+                <td>{{ animal.nome }}</td>
+                <td>{{ animal.tutor }}</td>
+                <td>{{ animal.especie }}</td>
+                <td>{{ animal.raca }}</td>
+                <td>{{ animal.idade }}</td>
+                <td class="direita">
+                  <button type="button" class="btn btn-primary btn-rounded" mdbRipple (click)="edit(animal)">
+                    Editar
+                  </button>
+                  <button type="button" class="btn btn-danger btn-rounded" mdbRipple (click)="deleteById(animal)">
+                    Deletar
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #modalAnimalDetalhe>
+  <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Cadastro</h5>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modalRef.close()"></button>
+  </div>
+  <div class="modal-body">
+    <app-animaldetails [animal]="animalEdit" (retorno)="retornoDetalhe($event)"></app-animaldetails>
+  </div>
+</ng-template>

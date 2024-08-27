@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+      <div class="col-lg-12 centralizar topo">
+        <div class="card">
+          <div class="card-body">
+            <h3>Cadastro de Produto:</h3>
+            <form (ngSubmit)="save()">
+              <mdb-form-control>
+                <input mdbInput type="text" id="nome" [(ngModel)]="produto.nome" name="nome" class="form-control" required />
+                <label mdbLabel class="form-label" for="nome">Nome</label>
+              </mdb-form-control>
+              <mdb-form-control>
+                <input mdbInput type="text" id="descricao" [(ngModel)]="produto.descricao" name="descricao" class="form-control" required />
+                <label mdbLabel class="form-label" for="descricao">Descrição</label>
+              </mdb-form-control>
+              <mdb-form-control>
+                <input mdbInput type="number" id="preco" [(ngModel)]="produto.preco" name="preco" class="form-control" required />
+                <label mdbLabel class="form-label" for="preco">Preço</label>
+              </mdb-form-control>
+              <mdb-form-control>
+                <input mdbInput type="number" id="quantidade" [(ngModel)]="produto.quantidade" name="quantidade" class="form-control" required />
+                <label mdbLabel class="form-label" for="quantidade">Quantidade</label>
+              </mdb-form-control>
+              <mdb-form-control>
+                <input mdbInput type="checkbox" id="estoque" [(ngModel)]="produto.estoque" name="estoque" />
+                <label mdbLabel class="form-label" for="estoque">Em Estoque</label>
+              </mdb-form-control>
+              <div class="actions">
+                <button type="submit" class="btn btn-primary">Salvar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,81 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body">
+          <h3>Produtos Cadastrados</h3>
+           <!-- Campo de busca -->
+           <div class="input-group mb-3">
+              <input 
+                type="number" 
+                class="form-control" 
+                placeholder="Buscar por ID" 
+                [(ngModel)]="searchId" 
+                name="searchId"
+                aria-label="Buscar por ID" 
+                aria-describedby="search-button">
+              <button 
+                class="btn btn-outline-secondary" 
+                type="button" 
+                id="search-button" 
+                (click)="search()">Buscar</button>
+            </div>
+          <div class="direita">
+            <button type="button" class="btn btn-primary btn-rounded" mdbRipple (click)="new()">
+              Novo
+            </button>
+          </div>
+          <br>
+          <table border="1" class="table table-striped">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Quantidade</th>
+                <th>Preço</th>
+                <th>Estoque</th>
+                <th>Ações</th> 
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let produto of lista; trackBy: trackByProdutoId ">
+                <td>{{ produto.id }}</td>
+                <td>{{ produto.nome }}</td>
+                <td>{{ produto.descricao }}</td>
+                <td>{{ produto.quantidade }}</td>
+                <td>{{ produto.preco }}</td>
+                <td>{{ produto.estoque ? 'Em estoque' : 'Fora de estoque' }}</td>
+                <td class="direita">
+                  <button type="button" class="btn btn-primary btn-rounded" mdbRipple (click)="edit(produto)">
+                    Editar
+                  </button>
+                  <button type="button" class="btn btn-danger btn-rounded" mdbRipple (click)="deleteById(produto)">
+                    Deletar
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #modalProdutoDetalhe>
+  <div class="modal-header">
+    <h5 class="modal-title">Detalhes do Produto</h5>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modalRef.close()"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <app-produtodetails
+      [produto]="ProdutoEdit" 
+      (retorno)="retornoProdutoDetalhe($event)"
+    ></app-produtodetails>
+  </div>
+</ng-template>

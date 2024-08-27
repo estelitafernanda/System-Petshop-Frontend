@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 centralizar topo">
+      <div class="card">
+        <div class="card-body">
+          <h3>Cadastro de Animal:</h3>
+          <form (ngSubmit)="save()">
+            <mdb-form-control>
+              <input mdbInput type="text" id="nome" [(ngModel)]="animal.nome" name="nome" class="form-control" required />
+              <label mdbLabel class="form-label" for="nome">Nome</label>
+            </mdb-form-control>
+            <mdb-form-control>
+              <input mdbInput type="text" id="especie" [(ngModel)]="animal.especie" name="especie" class="form-control" required />
+              <label mdbLabel class="form-label" for="especie">Especie</label>
+            </mdb-form-control>
+            <mdb-form-control>
+              <input mdbInput type="text" id="raca" [(ngModel)]="animal.raca" name="raca" class="form-control" required />
+              <label mdbLabel class="form-label" for="raca">Raça</label>
+            </mdb-form-control>
+            <mdb-form-control>
+              <input mdbInput type="text" id="idade" [(ngModel)]="animal.idade" name="idade" class="form-control" required />
+              <label mdbLabel class="form-label" for="idade">Idade</label>
+            </mdb-form-control>
+            <button type="submit" class="btn btn-primary">Salvar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

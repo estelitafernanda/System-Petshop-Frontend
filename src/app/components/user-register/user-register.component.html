@@ -1,0 +1,38 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Cadastro de Usuário</h3>
+                    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                        <div class="form-group">
+                            <label for="name">Nome</label>
+                            <input id="name" formControlName="name" type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input id="email" formControlName="email" type="email" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Senha</label>
+                            <input id="password" formControlName="password" type="password" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="contato">Contato</label>
+                            <input id="contato" formControlName="contato" type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="rua">Rua</label>
+                            <input id="rua" formControlName="rua" type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="numero">Número</label>
+                            <input id="numero" formControlName="numero" type="text" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Registrar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
