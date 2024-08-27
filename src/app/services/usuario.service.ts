@@ -8,9 +8,9 @@ import { Usuario } from '../models/usuario';
 })
 export class UsuarioService {
 
-  http = inject(HttpClient);
+  private http = inject(HttpClient);
 
-  API = "http://localhost:8080/usuario";
+  private API = "http://localhost:8080/usuario";
 
   constructor() { }
 

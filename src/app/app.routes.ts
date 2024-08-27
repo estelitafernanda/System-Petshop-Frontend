@@ -5,7 +5,6 @@ import { ProdutolistComponent } from './components/produto/produtolist/produtoli
 import { ProdutodetailsComponent } from './components/produto/produtodetails/produtodetails.component';
 import { AnimallistComponent } from './components/animal/animallist/animallist.component';
 import { UserRegisterComponent } from './components/user-register/user-register.component';
-import { NgModule } from '@angular/core';
 
 export const routes: Routes = [
     {path: "", redirectTo: "login", pathMatch: "full"},
